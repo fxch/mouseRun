@@ -1,0 +1,13 @@
+#waktu{
+	display:inline-block;
+	margin-right:900px;
+}
+#cheese{
+	display:inline-block; 
+	height=50px; 
+	width=50;
+}
+#progress-temp{
+	width:1200px;
+	height:20px;
+}

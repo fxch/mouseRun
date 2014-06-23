@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="myapp">
+    <head>
+        <link rel="stylesheet" type="text/css" href="lib/css/bootswatch.min.css">
+        <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="lib/css/main.css">
+        <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-glyphicons.css" >
+    </head>
+    <body ng-controller="MyController">
+        <div class="container text-center">
+
+            <div class="row">
+                <div ng-init="canvasSpaceGame()">
+                    <h1><b>Mouse Run</b></h1>
+                    <div>
+                        <h4 id="waktu">Time</h4>
+                        <img id="cheese" src="asset/cheese.png"/>
+                        <h3 id="key" style="display:inline-block">x 0</h3>
+                    </div>
+                    <div class="progress progress-striped active" id="progress-temp">
+                      <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%" id="progress" width="800">
+                      </div>
+                    </div>
+                    <div style="position: relative; width:1200px; height:720px; ">                
+                        <canvas id="myCanvas" width="1200" height="720" style="position: absolute; left: 0; top: 0; z-index: 0;">
+                        </canvas>
+                        <canvas id="canvas2" width="1200" height="720" style="position: absolute; left: 0; top: 0; z-index: 1;">
+                        </canvas>
+                        <audio controls autoplay style="visibility:hidden;" id="backsound">
+                          <source src="asset/mouseRun.mp3" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+        <!--Place Javascript here-->
+        <script src="lib/js/jquery.min.js"></script>
+        <script src="lib/js/angular.min.js"></script>
+        <script src="lib/js/bootstrap.min.js"></script>
+        <script src="lib/js/firebase.js"></script>
+        <script src="lib/js/angularfire.min.js"></script>
+        <script src="js/Controller.js"></script>
+        <script src="js/countdown.min.js"></script>
+        <script>
+                //var myCountdown1 = new Countdown({time:316});
+        </script>
+    </body>
+
+</html>

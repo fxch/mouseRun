@@ -7,11 +7,12 @@
         <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-glyphicons.css" >
     </head>
     <body ng-controller="MyController">
+        <!--IT's Me-->
         <div class="container text-center">
-
             <div class="row">
                 <div ng-init="canvasSpaceGame()">
                     <h1><b>Mouse Run</b></h1>
+                    <div id="username"> </div>
                     <div>
                         <h4 id="waktu">Time</h4>
                         <img id="cheese" src="asset/cheese.png"/>
@@ -34,13 +35,33 @@
                 </div>
             </div>
 
+            <div class="row">
+                    <div class="col-md-4">
+                    <h1>Scoreboard</h1>
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Username</th>
+                              <th>Score</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr id="scoreboard">
+                                
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+
         <!--Place Javascript here-->
         <script src="lib/js/jquery.min.js"></script>
         <script src="lib/js/angular.min.js"></script>
         <script src="lib/js/bootstrap.min.js"></script>
         <script src="lib/js/firebase.js"></script>
         <script src="lib/js/angularfire.min.js"></script>
-        <script src="js/Controller.js"></script>
+        <script src="js/controller.js"></script>
         <script src="js/countdown.min.js"></script>
         <script>
                 //var myCountdown1 = new Countdown({time:316});

@@ -24,9 +24,15 @@
         var getBread =0;
         var time = 600;
         var val=0;
-
+        var score = 0;
+        var username = "anon";
         // This function is called on page load.
         $scope.canvasSpaceGame = function(e){
+              username = prompt("Welcome to Chick Run! \nPlease enter your name :","Harry Potter");
+              
+              if (username != null) {
+                document.getElementById("username").innerHTML ="Welcome " + username + "! It's a nice weather today!";
+              }
 
               // Get the canvas element.
               canvas = document.getElementById("myCanvas");
@@ -75,6 +81,7 @@
                   makemouse();
 
                   makeCarMoveRight(6);
+                  score = 0;
               }
 
               // Add keyboard listener.
@@ -120,9 +127,13 @@
               }
 
               function youWin(){
-                  alert("You Win, Click Ok to Play Again!");
+                  score = Math.floor(val/10)*5+(5-arrBreadX.length)*100;
+                  alert("You Win!\n Click Ok to Play Again! Your Final score is "+score);
+                  var html = document.getElementById("scoreboard").innerHTML;
+                  document.getElementById("scoreboard").innerHTML = "<th>"+username+"</th><th>"+score+"</th>";
                   arrHeartX = [960,1040,1120];
                   arrBreadX = [80,320,560,800,1040]; 
+
                   getBread = 0;
                   document.getElementById("key").innerHTML = "x"+getBread;
                   countdown(function() {  
@@ -131,7 +142,9 @@
               }
 
               function youLose(){
-                  alert("You Lose, Click Ok to Play Again!");
+                  score = Math.floor(val/10)*5+(5-arrBreadX.length)*100;
+                  alert("You Lose!\n Click Ok to Play Again! Your Final score is "+score);
+                  document.getElementById("scoreboard").innerHTML =   "<th>"+username+"</th><th>"+score+"</th>";
                   arrHeartX = [960,1040,1120];
                   arrBreadX = [80,320,560,800,1040]; 
                   getBread = 0;
